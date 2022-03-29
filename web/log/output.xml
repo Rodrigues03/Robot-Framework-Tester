@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.0 on win32)" generated="20220329 09:36:03.996" rpa="false" schemaversion="3">
+<suite id="s1" name="Login Form" source="C:\qaninja\robot\web\tests\login_form.robot">
+<test id="s1-t1" name="Login com sucesso" line="8">
+<kw name="Nova sessão" library="base" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220329 09:36:04.605" level="INFO">Opening browser 'chrome' to base url 'https://training-wheels-protocol.herokuapp.com'.</msg>
+<status status="PASS" starttime="20220329 09:36:04.605" endtime="20220329 09:36:33.550"/>
+</kw>
+<status status="PASS" starttime="20220329 09:36:04.605" endtime="20220329 09:36:33.550"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}/login</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220329 09:36:33.551" level="INFO">Opening url 'https://training-wheels-protocol.herokuapp.com/login'</msg>
+<status status="PASS" starttime="20220329 09:36:33.551" endtime="20220329 09:36:45.032"/>
+</kw>
+<kw name="Login With">
+<arg>stark</arg>
+<arg>jarvis!</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:input[name=username]</arg>
+<arg>${uname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220329 09:36:45.034" level="INFO">Typing text 'stark' into text field 'css:input[name=username]'.</msg>
+<msg timestamp="20220329 09:36:45.189" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-33.png"&gt;&lt;img src="selenium-screenshot-33.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220329 09:36:45.189" level="FAIL">Element with locator 'css:input[name=username]' not found.</msg>
+<status status="FAIL" starttime="20220329 09:36:45.033" endtime="20220329 09:36:45.204"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:input[name=password]</arg>
+<arg>${pass}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220329 09:36:45.204" endtime="20220329 09:36:45.204"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>class:btn-login</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220329 09:36:45.204" endtime="20220329 09:36:45.204"/>
+</kw>
+<status status="FAIL" starttime="20220329 09:36:45.032" endtime="20220329 09:36:45.204"/>
+</kw>
+<kw name="Should See Logged User">
+<arg>full_name</arg>
+<arg>Tony Stark</arg>
+<status status="NOT RUN" starttime="20220329 09:36:45.204" endtime="20220329 09:36:45.220"/>
+</kw>
+<kw name="Encerra sessão" library="base" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220329 09:36:45.339" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-34.png"&gt;&lt;img src="selenium-screenshot-34.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220329 09:36:45.220" endtime="20220329 09:36:45.339"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220329 09:36:45.339" endtime="20220329 09:36:47.676"/>
+</kw>
+<status status="PASS" starttime="20220329 09:36:45.220" endtime="20220329 09:36:47.676"/>
+</kw>
+<status status="FAIL" starttime="20220329 09:36:04.605" endtime="20220329 09:36:47.677">Element with locator 'css:input[name=username]' not found.</status>
+</test>
+<test id="s1-t2" name="Senha Invalida" line="14">
+<kw name="Nova sessão" library="base" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220329 09:36:47.683" level="INFO">Opening browser 'chrome' to base url 'https://training-wheels-protocol.herokuapp.com'.</msg>
+<msg timestamp="20220329 09:37:23.512" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-35.png"&gt;&lt;img src="selenium-screenshot-35.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220329 09:37:23.512" level="FAIL">WebDriverException: Message: unknown error: net::ERR_NAME_NOT_RESOLVED
+  (Session info: chrome=99.0.4844.84)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x002F9943+2595139]
+	Ordinal0 [0x0028C9F1+2148849]
+	Ordinal0 [0x00184528+1066280]
+	Ordinal0 [0x00180DB4+1052084]
+	Ordinal0 [0x001763BD+1008573]
+	Ordinal0 [0x00176F7C+1011580]
+	Ordinal0 [0x001765CA+1009098]
+	Ordinal0 [0x00175BC6+1006534]
+	Ordinal0 [0x00174AD0+1002192]
+	Ordinal0 [0x00174FAD+1003437]
+	Ordinal0 [0x00185C4A+1072202]
+	Ordinal0 [0x001DC19D+1425821]
+	Ordinal0 [0x001CB9EC+1358316]
+	Ordinal0 [0x001DBAF2+1424114]
+	Ordinal0 [0x001CB806+1357830]
+	Ordinal0 [0x001A6086+1204358]
+	Ordinal0 [0x001A6F96+1208214]
+	GetHandleVerifier [0x0049B232+1658114]
+	GetHandleVerifier [0x0055312C+2411516]
+	GetHandleVerifier [0x0038F261+560433]
+	GetHandleVerifier [0x0038E366+556598]
+	Ordinal0 [0x0029286B+2173035]
+	Ordinal0 [0x002975F8+2192888]
+	Ordinal0 [0x002976E5+2193125]
+	Ordinal0 [0x002A11FC+2232828]
+	BaseThreadInitThunk [0x765E6739+25]
+	RtlGetFullPathName_UEx [0x76FB8E7F+1215]
+	RtlGetFullPathName_UEx [0x76FB8E4D+1165]
+	(No symbol) [0x00000000]
+</msg>
+<status status="FAIL" starttime="20220329 09:36:47.683" endtime="20220329 09:37:23.535"/>
+</kw>
+<status status="FAIL" starttime="20220329 09:36:47.682" endtime="20220329 09:37:23.536"/>
+</kw>
+<kw name="Encerra sessão" library="base" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220329 09:37:23.666" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-36.png"&gt;&lt;img src="selenium-screenshot-36.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220329 09:37:23.539" endtime="20220329 09:37:23.666"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220329 09:37:23.667" endtime="20220329 09:37:25.909"/>
+</kw>
+<status status="PASS" starttime="20220329 09:37:23.538" endtime="20220329 09:37:25.909"/>
+</kw>
+<tag>login_error</tag>
+<status status="FAIL" starttime="20220329 09:36:47.681" endtime="20220329 09:37:25.909">Setup failed:
+WebDriverException: Message: unknown error: net::ERR_NAME_NOT_RESOLVED
+  (Session info: chrome=99.0.4844.84)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x002F9943+2595139]
+	Ordinal0 [0x0028C9F1+2148849]
+	Ordinal0 [0x00184528+1066280]
+	Ordinal0 [0x00180DB4+1052084]
+	Ordinal0 [0x001763BD+1008573]
+	Ordinal0 [0x00176F7C+1011580]
+	Ordinal0 [0x001765CA+1009098]
+	Ordinal0 [0x00175BC6+1006534]
+	Ordinal0 [0x00174AD0+1002192]
+	Ordinal0 [0x00174FAD+1003437]
+	Ordinal0 [0x00185C4A+1072202]
+	Ordinal0 [0x001DC19D+1425821]
+	Ordinal0 [0x001CB9EC+1358316]
+	Ordinal0 [0x001DBAF2+1424114]
+	Ordinal0 [0x001CB806+1357830]
+	Ordinal0 [0x001A6086+1204358]
+	Ordinal0 [0x001A6F96+1208214]
+	GetHandleVerifier [0x0049B232+1658114]
+	GetHandleVerifier [0x0055312C+2411516]
+	GetHandleVerifier [0x0038F261+560433]
+	GetHandleVerifier [0x0038E366+556598]
+	Ordinal0 [0x0029286B+2173035]
+	Ordinal0 [0x002975F8+2192888]
+	Ordinal0 [0x002976E5+2193125]
+	Ordinal0 [0x002A11FC+2232828]
+	BaseThreadInitThunk [0x765E6739+25]
+	RtlGetFullPathName_UEx [0x76FB8E7F+1215]
+	RtlGetFullPathName_UEx [0x76FB8E4D+1165]
+	(No symbol) [0x00000000]
+</status>
+</test>
+<test id="s1-t3" name="Usuario não existe" line="20">
+<kw name="Nova sessão" library="base" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220329 09:37:25.925" level="INFO">Opening browser 'chrome' to base url 'https://training-wheels-protocol.herokuapp.com'.</msg>
+<msg timestamp="20220329 09:38:01.923" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-37.png"&gt;&lt;img src="selenium-screenshot-37.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220329 09:38:01.924" level="FAIL">WebDriverException: Message: unknown error: net::ERR_NAME_NOT_RESOLVED
+  (Session info: chrome=99.0.4844.84)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x002F9943+2595139]
+	Ordinal0 [0x0028C9F1+2148849]
+	Ordinal0 [0x00184528+1066280]
+	Ordinal0 [0x00180DB4+1052084]
+	Ordinal0 [0x001763BD+1008573]
+	Ordinal0 [0x00176F7C+1011580]
+	Ordinal0 [0x001765CA+1009098]
+	Ordinal0 [0x00175BC6+1006534]
+	Ordinal0 [0x00174AD0+1002192]
+	Ordinal0 [0x00174FAD+1003437]
+	Ordinal0 [0x00185C4A+1072202]
+	Ordinal0 [0x001DC19D+1425821]
+	Ordinal0 [0x001CB9EC+1358316]
+	Ordinal0 [0x001DBAF2+1424114]
+	Ordinal0 [0x001CB806+1357830]
+	Ordinal0 [0x001A6086+1204358]
+	Ordinal0 [0x001A6F96+1208214]
+	GetHandleVerifier [0x0049B232+1658114]
+	GetHandleVerifier [0x0055312C+2411516]
+	GetHandleVerifier [0x0038F261+560433]
+	GetHandleVerifier [0x0038E366+556598]
+	Ordinal0 [0x0029286B+2173035]
+	Ordinal0 [0x002975F8+2192888]
+	Ordinal0 [0x002976E5+2193125]
+	Ordinal0 [0x002A11FC+2232828]
+	BaseThreadInitThunk [0x765E6739+25]
+	RtlGetFullPathName_UEx [0x76FB8E7F+1215]
+	RtlGetFullPathName_UEx [0x76FB8E4D+1165]
+	(No symbol) [0x00000000]
+</msg>
+<status status="FAIL" starttime="20220329 09:37:25.909" endtime="20220329 09:38:01.925"/>
+</kw>
+<status status="FAIL" starttime="20220329 09:37:25.909" endtime="20220329 09:38:01.927"/>
+</kw>
+<kw name="Encerra sessão" library="base" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220329 09:38:02.056" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-38.png"&gt;&lt;img src="selenium-screenshot-38.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220329 09:38:01.928" endtime="20220329 09:38:02.056"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220329 09:38:02.056" endtime="20220329 09:38:04.432"/>
+</kw>
+<status status="PASS" starttime="20220329 09:38:01.928" endtime="20220329 09:38:04.432"/>
+</kw>
+<tag>login_user404</tag>
+<status status="FAIL" starttime="20220329 09:37:25.909" endtime="20220329 09:38:04.432">Setup failed:
+WebDriverException: Message: unknown error: net::ERR_NAME_NOT_RESOLVED
+  (Session info: chrome=99.0.4844.84)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x002F9943+2595139]
+	Ordinal0 [0x0028C9F1+2148849]
+	Ordinal0 [0x00184528+1066280]
+	Ordinal0 [0x00180DB4+1052084]
+	Ordinal0 [0x001763BD+1008573]
+	Ordinal0 [0x00176F7C+1011580]
+	Ordinal0 [0x001765CA+1009098]
+	Ordinal0 [0x00175BC6+1006534]
+	Ordinal0 [0x00174AD0+1002192]
+	Ordinal0 [0x00174FAD+1003437]
+	Ordinal0 [0x00185C4A+1072202]
+	Ordinal0 [0x001DC19D+1425821]
+	Ordinal0 [0x001CB9EC+1358316]
+	Ordinal0 [0x001DBAF2+1424114]
+	Ordinal0 [0x001CB806+1357830]
+	Ordinal0 [0x001A6086+1204358]
+	Ordinal0 [0x001A6F96+1208214]
+	GetHandleVerifier [0x0049B232+1658114]
+	GetHandleVerifier [0x0055312C+2411516]
+	GetHandleVerifier [0x0038F261+560433]
+	GetHandleVerifier [0x0038E366+556598]
+	Ordinal0 [0x0029286B+2173035]
+	Ordinal0 [0x002975F8+2192888]
+	Ordinal0 [0x002976E5+2193125]
+	Ordinal0 [0x002A11FC+2232828]
+	BaseThreadInitThunk [0x765E6739+25]
+	RtlGetFullPathName_UEx [0x76FB8E7F+1215]
+	RtlGetFullPathName_UEx [0x76FB8E4D+1165]
+	(No symbol) [0x00000000]
+</status>
+</test>
+<status status="FAIL" starttime="20220329 09:36:04.012" endtime="20220329 09:38:04.432"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">login_error</stat>
+<stat pass="0" fail="1" skip="0">login_user404</stat>
+</tag>
+<suite>
+<stat pass="0" fail="3" skip="0" id="s1" name="Login Form">Login Form</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.0 on win32)" generated="20220328 18:09:14.419" rpa="false" schemaversion="3">
+<suite id="s1" name="Select" source="C:\qaninja\robot\web\tests\select.robot">
+<test id="s1-t1" name="Selecionar por texto e validar pelo valor" line="8">
+<kw name="Nova sessão" library="base" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220328 18:09:14.847" level="INFO">Opening browser 'chrome' to base url 'https://training-wheels-protocol.herokuapp.com'.</msg>
+<status status="PASS" starttime="20220328 18:09:14.847" endtime="20220328 18:09:28.885"/>
+</kw>
+<status status="PASS" starttime="20220328 18:09:14.847" endtime="20220328 18:09:28.886"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}/dropdown</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220328 18:09:28.887" level="INFO">Opening url 'https://training-wheels-protocol.herokuapp.com/dropdown'</msg>
+<status status="PASS" starttime="20220328 18:09:28.887" endtime="20220328 18:09:40.163"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>class:avenger-list</arg>
+<arg>Scott Lang</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20220328 18:09:40.166" level="INFO">Selecting options from selection list 'class:avenger-list' by label Scott Lang.</msg>
+<status status="PASS" starttime="20220328 18:09:40.164" endtime="20220328 18:09:40.255"/>
+</kw>
+<kw name="Get Selected List Value" library="SeleniumLibrary">
+<var>${selected}</var>
+<arg>class:avenger-list</arg>
+<doc>Returns the value of selected option from selection list ``locator``.</doc>
+<msg timestamp="20220328 18:09:40.393" level="INFO">${selected} = 7</msg>
+<status status="PASS" starttime="20220328 18:09:40.255" endtime="20220328 18:09:40.393"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${selected}</arg>
+<arg>7</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220328 18:09:40.393" endtime="20220328 18:09:40.393"/>
+</kw>
+<kw name="Encerra sessão" library="base" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220328 18:09:40.577" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-32.png"&gt;&lt;img src="selenium-screenshot-32.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220328 18:09:40.393" endtime="20220328 18:09:40.577"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220328 18:09:40.577" endtime="20220328 18:09:42.764"/>
+</kw>
+<status status="PASS" starttime="20220328 18:09:40.393" endtime="20220328 18:09:42.764"/>
+</kw>
+<status status="PASS" starttime="20220328 18:09:14.831" endtime="20220328 18:09:42.764"/>
+</test>
+<test id="s1-t2" name="Selecionar pelo valor e validar pelo texto" line="14">
+<kw name="Nova sessão" library="base" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220328 18:09:42.764" level="INFO">Opening browser 'chrome' to base url 'https://training-wheels-protocol.herokuapp.com'.</msg>
+<msg timestamp="20220328 18:10:17.968" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-33.png"&gt;&lt;img src="selenium-screenshot-33.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220328 18:10:17.968" level="FAIL">WebDriverException: Message: unknown error: net::ERR_NAME_NOT_RESOLVED
+  (Session info: chrome=99.0.4844.84)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x01089943+2595139]
+	Ordinal0 [0x0101C9F1+2148849]
+	Ordinal0 [0x00F14528+1066280]
+	Ordinal0 [0x00F10DB4+1052084]
+	Ordinal0 [0x00F063BD+1008573]
+	Ordinal0 [0x00F06F7C+1011580]
+	Ordinal0 [0x00F065CA+1009098]
+	Ordinal0 [0x00F05BC6+1006534]
+	Ordinal0 [0x00F04AD0+1002192]
+	Ordinal0 [0x00F04FAD+1003437]
+	Ordinal0 [0x00F15C4A+1072202]
+	Ordinal0 [0x00F6C19D+1425821]
+	Ordinal0 [0x00F5B9EC+1358316]
+	Ordinal0 [0x00F6BAF2+1424114]
+	Ordinal0 [0x00F5B806+1357830]
+	Ordinal0 [0x00F36086+1204358]
+	Ordinal0 [0x00F36F96+1208214]
+	GetHandleVerifier [0x0122B232+1658114]
+	GetHandleVerifier [0x012E312C+2411516]
+	GetHandleVerifier [0x0111F261+560433]
+	GetHandleVerifier [0x0111E366+556598]
+	Ordinal0 [0x0102286B+2173035]
+	Ordinal0 [0x010275F8+2192888]
+	Ordinal0 [0x010276E5+2193125]
+	Ordinal0 [0x010311FC+2232828]
+	BaseThreadInitThunk [0x767D6739+25]
+	RtlGetFullPathName_UEx [0x77118E7F+1215]
+	RtlGetFullPathName_UEx [0x77118E4D+1165]
+</msg>
+<status status="FAIL" starttime="20220328 18:09:42.764" endtime="20220328 18:10:17.984"/>
+</kw>
+<status status="FAIL" starttime="20220328 18:09:42.764" endtime="20220328 18:10:17.989"/>
+</kw>
+<kw name="Encerra sessão" library="base" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220328 18:10:18.105" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-34.png"&gt;&lt;img src="selenium-screenshot-34.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220328 18:10:17.991" endtime="20220328 18:10:18.105"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220328 18:10:18.105" endtime="20220328 18:10:20.284"/>
+</kw>
+<status status="PASS" starttime="20220328 18:10:17.991" endtime="20220328 18:10:20.284"/>
+</kw>
+<status status="FAIL" starttime="20220328 18:09:42.764" endtime="20220328 18:10:20.284">Setup failed:
+WebDriverException: Message: unknown error: net::ERR_NAME_NOT_RESOLVED
+  (Session info: chrome=99.0.4844.84)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x01089943+2595139]
+	Ordinal0 [0x0101C9F1+2148849]
+	Ordinal0 [0x00F14528+1066280]
+	Ordinal0 [0x00F10DB4+1052084]
+	Ordinal0 [0x00F063BD+1008573]
+	Ordinal0 [0x00F06F7C+1011580]
+	Ordinal0 [0x00F065CA+1009098]
+	Ordinal0 [0x00F05BC6+1006534]
+	Ordinal0 [0x00F04AD0+1002192]
+	Ordinal0 [0x00F04FAD+1003437]
+	Ordinal0 [0x00F15C4A+1072202]
+	Ordinal0 [0x00F6C19D+1425821]
+	Ordinal0 [0x00F5B9EC+1358316]
+	Ordinal0 [0x00F6BAF2+1424114]
+	Ordinal0 [0x00F5B806+1357830]
+	Ordinal0 [0x00F36086+1204358]
+	Ordinal0 [0x00F36F96+1208214]
+	GetHandleVerifier [0x0122B232+1658114]
+	GetHandleVerifier [0x012E312C+2411516]
+	GetHandleVerifier [0x0111F261+560433]
+	GetHandleVerifier [0x0111E366+556598]
+	Ordinal0 [0x0102286B+2173035]
+	Ordinal0 [0x010275F8+2192888]
+	Ordinal0 [0x010276E5+2193125]
+	Ordinal0 [0x010311FC+2232828]
+	BaseThreadInitThunk [0x767D6739+25]
+	RtlGetFullPathName_UEx [0x77118E7F+1215]
+	RtlGetFullPathName_UEx [0x77118E4D+1165]
+</status>
+</test>
+<status status="FAIL" starttime="20220328 18:09:14.419" endtime="20220328 18:10:20.284"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="1" skip="0" id="s1" name="Select">Select</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
